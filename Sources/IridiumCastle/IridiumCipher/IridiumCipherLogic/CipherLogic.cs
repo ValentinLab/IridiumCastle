@@ -2,24 +2,21 @@
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace IridiumCipher.IridiumCipherLogic
 {
-    /// <summary>
-    ///  Логика данной версии IridiumCipher.
-    /// </summary>
-    public class CipherLogic
+    internal class CipherLogic
     {
-        private string _lastError;
-
         /// <summary>
         /// Сообщение об ошибке.
         /// </summary>
         public string LastError
         {
-            get => _lastError;
+            get;
+            private set;
         }
 
         //Первые 7 байт содержащих версию.
@@ -60,7 +57,7 @@ namespace IridiumCipher.IridiumCipherLogic
         {
             if (fileSize < СipherBlockSize)
             {
-                _lastError = $"Размер данных менее {СipherBlockSize} байт. Шифрование невозможно.";
+                LastError = $"Размер данных менее {СipherBlockSize} байт. Шифрование невозможно.";
                 return (new byte[1], false);
             }
 

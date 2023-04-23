@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IridiumCastle", "IridiumCastle\IridiumCastle.csproj", "{2CEB8D1B-365C-4826-8E2C-ECDD022DEB99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IridiumCipher", "IridiumCipher\IridiumCipher.csproj", "{5FD44E0C-3B31-42BA-B7FA-4F351649D1E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IridiumCipherTests", "IridiumCipherTests\IridiumCipherTests.csproj", "{41BA4693-B47B-4E4B-8477-11B856FBE2FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CEB8D1B-365C-4826-8E2C-ECDD022DEB99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CEB8D1B-365C-4826-8E2C-ECDD022DEB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CEB8D1B-365C-4826-8E2C-ECDD022DEB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CEB8D1B-365C-4826-8E2C-ECDD022DEB99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FD44E0C-3B31-42BA-B7FA-4F351649D1E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FD44E0C-3B31-42BA-B7FA-4F351649D1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FD44E0C-3B31-42BA-B7FA-4F351649D1E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FD44E0C-3B31-42BA-B7FA-4F351649D1E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41BA4693-B47B-4E4B-8477-11B856FBE2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41BA4693-B47B-4E4B-8477-11B856FBE2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41BA4693-B47B-4E4B-8477-11B856FBE2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41BA4693-B47B-4E4B-8477-11B856FBE2FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F827F407-E376-4820-A68B-7CECF0EB74C1}
+	EndGlobalSection
+EndGlobal

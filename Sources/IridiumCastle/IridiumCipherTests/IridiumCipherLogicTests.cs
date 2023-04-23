@@ -5,46 +5,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IridiumCipher;
+using IridiumCipher.Implementations;
 
 namespace IridiumCipherTests
 {
     [TestFixture]
     internal class IridiumCipherLogicTests
     {
-        private CipherLogic _logic;
+        private ITestsAdapter _adapter;
 
         [SetUp]
         public void Setup()
         {
-            _logic = new CipherLogic();
+            _adapter = new IridiumTestsAdapterImpl();
         }
 
         /// <summary>
-        /// Тест создания заголовка файла.
+        /// Тест создания заголовка файла с пустым размером.
         /// </summary>
         /// <param name="length"></param>
         [Test, Order(1)]
-        [TestCase(10243583)]
-        public void CreateTitleTest(long length)
+        [TestCase(0)]
+        public void CreateTitleTestZeroLen(long length)
         {
-            int allowBlockSize = _logic.SymmetricBlockSize;
-            var result = _logic.CreateTitle(allowBlockSize-1);
-
-            //Должны получить ошибку-так как не дупустимый размер файла. Файл не может быть меньше блока.
-            Assert.IsFalse(result.isSuccess);
-            TestContext.WriteLine($"message={_logic.LastError}");
-
-            result = _logic.CreateTitle(length);
-            Assert.IsTrue(result.isSuccess);
-            File.WriteAllBytes("titleTest.data", result.data);
+            var result = _adapter.CreateTitle(length, "");
+            Assert.IsFalse(result, _adapter.LastError);
         }
 
+        /// <summary>
+        /// Тест создания заголовка файла.Результат также сохраняется в файл.
+        /// </summary>
+        /// <param name="length"></param>
         [Test, Order(2)]
-        [TestCase(1024358)]
-        public void RunCipher(long length)
+        [TestCase(10243583, "titleTest.data")]
+        public void CreateTitleTest(long length, string fileName)
         {
-            _logic.RunCipher(length);
-            Assert.IsFalse(false);
+            var result = _adapter.CreateTitle(length, fileName);
+            Assert.IsTrue(result, _adapter.LastError);
         }
+        
     }
 }
